@@ -3,7 +3,8 @@ window.onload = () => {
     // global varaiables
 
     const toppings = [];
-    const choices = document.querySelectorAll('.checkbox');;
+    const choices = document.querySelectorAll('.checkbox');
+    let qtyToppings;
 
     // generator functions
 
@@ -17,15 +18,21 @@ window.onload = () => {
         choices.forEach(selection => {
             if (selection.checked === true) toppings.push(selection.id);
         });
-
-        console.log(toppings);
     };
 
 
     const generatePizza = () => {
 
         getSelections();
-        console.log('test');
+        qtyToppings = parseInt(document.querySelector('#select-qty').value);
+
+        if (qtyToppings === 0) {
+            alert(`Please select a number of toppings for your pizza.`);
+        } else if (qtyToppings >= toppings.length) {
+            alert(`You have chosen a pizza with ${qtyToppings} toppings. You will need to select more than ${toppings.length} topping options so we can properly surprise you.`);
+        } else if (qtyToppings < toppings.length) {
+            console.log(qtyToppings);
+        }
 
     };
 
