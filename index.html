@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <title>YOLO Slice</title>
+</head>
+<body>
+    <header>
+        <h1>yolo slice</h1>
+        <h2>a random pizza generator</h2>
+    </header>
+
+    <main>
+        
+        <section>
+            <p>Not sure what to order? We've got you covered!</p>
+            <p>Let us know what size to make, tell us what you don't like, and we'll do the rest.</p>
+        </section>
+
+        <section>
+            <h3>pizza</h3>
+            <form id="form-pizza">
+                
+                <label for="select-size">select a size</label>
+                <select name="select-size" id="select-size" form-id="form-pizza">
+                    <option value="select-size-small">small</option>
+                    <option value="select-size-medium">medium</option>
+                    <option value="select-size-large">large</option>
+                    <option value="select-size-xlarge">x-large</option>
+                </select>
+                <label for="select-qty">select a number of toppings</label>
+                <select name="select-qty" id="select-qty" form-id="form-pizza">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>                
+                
+            </form>
+        </section>
+
+        <section>
+            <h3>toppings</h3>
+            <p>Tell us what you like and don't like! Uncheck anything that you wouldn't want on your pizza. Make sure to choose more than the number of toppings you want on your pizza!</p>
+            <button type="button" id="button-check-all">check all</button>
+            <button type="button" id="button-uncheck-all">uncheck all</button>
+            <form id="form-toppings">
+                <ul>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="pepperoni" />
+                        <label for="pepperoni">pepperoni</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="sausage" />
+                        <label for="sausage">sausage</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="mushrooms" />
+                        <label for="mushrooms">mushrooms</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="bellpeppers" />
+                        <label for="bellpeppers">bell peppers</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="pineapple" />
+                        <label for="pineapple">pineapple</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="jalapeno" />
+                        <label for="jalapeno">jalapeno</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="anchovy" />
+                        <label for="anchovy">anchovy</label>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="extracheese" />
+                        <label for="extracheese">extra cheese</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="chicken" />
+                        <label for="chicken">chicken</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="artichoke" />
+                        <label for="artichoke">artichoke</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="tomato" />
+                        <label for="tomato">tomato</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="spinach" />
+                        <label for="spinach">spinach</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="onion" />
+                        <label for="onion">onion</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" id="garlic" />
+                        <label for="garlic">garlic</label>
+                    </li>
+                </ul>
+
+            </form>
+        </section>
+        <section>
+            <button type="button" id="button-submit">surprise!</button>
+        </section>
+
+
+    </main>
+    
+</body>
+</html>
