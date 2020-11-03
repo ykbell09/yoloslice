@@ -25,10 +25,10 @@
                 
                 <label for="select-size">select a size</label>
                 <select name="select-size" id="select-size" form-id="form-pizza">
-                    <option value="select-size-small">small</option>
-                    <option value="select-size-medium">medium</option>
-                    <option value="select-size-large">large</option>
-                    <option value="select-size-xlarge">x-large</option>
+                    <option value="small">small</option>
+                    <option value="medium">medium</option>
+                    <option value="large">large</option>
+                    <option value="xlarge">x-large</option>
                 </select>
                 <label for="select-qty">select a number of toppings</label>
                 <select name="select-qty" id="select-qty" form-id="form-pizza">
@@ -66,7 +66,7 @@
                         <label for="mushrooms">mushrooms</label>
                     </li>
                     <li>
-                        <input class="checkbox" checked="true" type="checkbox" id="bellpeppers" />
+                        <input class="checkbox" checked="true" type="checkbox" id="bell-peppers" />
                         <label for="bellpeppers">bell peppers</label>
                     </li>
                     <li>
@@ -84,7 +84,7 @@
                 </ul>
                 <ul>
                     <li>
-                        <input class="checkbox" checked="true" type="checkbox" id="extracheese" />
+                        <input class="checkbox" checked="true" type="checkbox" id="extra-cheese" />
                         <label for="extracheese">extra cheese</label>
                     </li>
                     <li>
@@ -115,10 +115,18 @@
 
             </form>
         </section>
+        
         <section>
             <button type="button" id="button-submit">surprise!</button>
         </section>
 
+        <!-- pop up results container -->
+        <section>
+            <h2>your order is on its way</h3>
+            <p>one size <span id="span-ordered-size"></span> pizza with:</p>
+                <ul id="list-ordered-toppings">
+                </ul>
+        </section>
 
     </main>
     

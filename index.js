@@ -1,42 +1,68 @@
 window.onload = () => {
 
-    // global varaiables
+    // --- global varaiables ---
 
-    const toppings = [];
+    let sizeRequested;
+    let qtyRequested;
     const choices = document.querySelectorAll('.checkbox');
-    let qtyToppings;
+    const checkedSelections = [];
+    const randomChosenItems = [];
 
-    // generator functions
+
+    // --- generator functions ---
 
     const checkToggle = (value) => {
         choices.forEach(selection => selection.checked = value);
     };
 
-    const getSelections = () => {
+    const getCheckedSelections = () => {
 
-        toppings.length = 0;
+        checkedSelections.length = 0;
         choices.forEach(selection => {
-            if (selection.checked === true) toppings.push(selection.id);
+            if (selection.checked === true) checkedSelections.push(selection.id);
         });
     };
 
+    // make sure the user has selected enough toppings to randomize their request
+    const checkQtyRequested = () => {
 
-    const generatePizza = () => {
+        qtyRequested = parseInt(document.querySelector('#select-qty').value);
 
-        getSelections();
-        qtyToppings = parseInt(document.querySelector('#select-qty').value);
-
-        if (qtyToppings === 0) {
-            alert(`Please select a number of toppings for your pizza.`);
-        } else if (qtyToppings >= toppings.length) {
-            alert(`You have chosen a pizza with ${qtyToppings} toppings. You will need to select more than ${toppings.length} topping options so we can properly surprise you.`);
-        } else if (qtyToppings < toppings.length) {
-            console.log(qtyToppings);
+        if (qtyRequested === 0) {
+            return alert(`Please select a number of toppings for your pizza.`);
+        } else if (qtyRequested >= checkedSelections.length) {
+            return alert(`You have chosen a pizza with ${qtyRequested} toppings. You will need to select more than ${checkedSelections.length} topping options so we can properly surprise you.`);
+        } else if (qtyRequested < checkedSelections.length) {
+            return true;
         }
-
     };
 
-    // add event listeners, button functionality
+    // generate random chosen items
+    const generatePizza = () => {
+
+        getCheckedSelections();
+        
+        if (checkQtyRequested() === true) {
+            for (let i = 0; randomChosenItems.length < qtyRequested; i++) {
+                const n = Math.floor(Math.random() * checkedSelections.length);
+                if (!randomChosenItems.includes(checkedSelections[n])) {
+                    randomChosenItems.push(checkedSelections[n]);
+                }
+            }
+        }
+    };
+    
+    // display results
+    const displayPizza = () => {
+
+        sizeRequested = document.querySelector('#select-size').value;
+        
+        console.log(randomChosenItems);
+    
+    };
+    
+    
+    //  --- add event listeners, button functionality ---
 
     document.querySelector('#button-check-all').addEventListener('click', () => {
         checkToggle('true');
@@ -48,6 +74,7 @@ window.onload = () => {
 
     document.querySelector('#button-submit').addEventListener('click', () => {
         generatePizza();
+        displayPizza();
     });
 
 };
