@@ -40,6 +40,9 @@ window.onload = () => {
     // generate random chosen items
     const generatePizza = () => {
 
+        // clear previously items
+        randomChosenItems.length = 0;
+
         getCheckedSelections();
         
         if (checkQtyRequested() === true) {
@@ -56,9 +59,15 @@ window.onload = () => {
     const displayPizza = () => {
 
         sizeRequested = document.querySelector('#select-size').value;
-        
-        console.log(randomChosenItems);
-    
+        document.querySelector('#span-ordered-size').innerHTML = sizeRequested;  
+        const list = document.querySelector('#list-ordered-toppings');
+        list.innerHTML = '';
+
+        randomChosenItems.forEach(item => {
+            const newItem = document.createElement('li');
+            newItem.innerText = item;
+            list.appendChild(newItem);
+        });
     };
     
     
