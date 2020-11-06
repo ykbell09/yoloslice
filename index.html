@@ -1,56 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" />
     <script src="index.js"></script>
     <title>YOLO Slice</title>
 </head>
-<body>
-    <header>
-        <h1>yolo slice</h1>
-        <h2>a random pizza generator</h2>
-    </header>
 
+<body>
     <main>
-        
+
+        <header>
+            <h1>yolo slice</h1>
+            <h2>a random pizza generator</h2>
+        </header>
+
+
         <section>
-            <p>Not sure what to order? We've got you covered!</p>
-            <p>Let us know what size to make, tell us what you like and don't like, and we'll do the rest.</p>
+            <p>Not sure what kind of pizza to order? We've got you covered!
+                Let us know what size to make, tell us what you like and don't like, and we'll do the rest.</p>
         </section>
 
         <section>
             <h3>pizza</h3>
             <form id="form-pizza">
                 
-                <label for="select-size">select a size</label>
-                <select name="select-size" id="select-size" form-id="form-pizza">
-                    <option value="small">small</option>
-                    <option value="medium">medium</option>
-                    <option value="large">large</option>
-                    <option value="xlarge">x-large</option>
-                </select>
-                <label for="select-qty">select a number of toppings</label>
-                <select name="select-qty" id="select-qty" form-id="form-pizza">
-                    <option value="0"></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                </select>                
+                <div>
+                    <label for="select-size">select a size</label>
+                    <select name="select-size" id="select-size" form-id="form-pizza">
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                        <option value="xlarge">x-large</option>
+                    </select>
+                </div>
                 
+                <div>
+                    <label for="select-qty">select a number of toppings</label>
+                    <select name="select-qty" id="select-qty" form-id="form-pizza">
+                        <option value="0"></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+
             </form>
         </section>
 
         <section>
             <h3>toppings</h3>
-            <p>Check everything you like on pizzas and we'll pick from your list. Make sure to choose more than the number of toppings you want on your pizza!</p>
-            <button type="button" id="button-check-all">check all</button>
-            <button type="button" id="button-uncheck-all">uncheck all</button>
+            <p>Check everything you like on pizzas and we'll pick from your list. Make sure to choose more than the
+                number of toppings you want on your pizza!</p>
+
+            <div class="container-buttons">
+                <button type="button" id="button-check-all">check all</button>
+                <button type="button" id="button-uncheck-all">uncheck all</button>
+            </div>
+
             <form id="form-toppings">
                 <ul>
                     <li>
@@ -69,6 +83,8 @@
                         <input class="checkbox" checked="true" type="checkbox" id="bell-peppers" />
                         <label for="bellpeppers">bell peppers</label>
                     </li>
+                </ul>
+                <ul>
                     <li>
                         <input class="checkbox" checked="true" type="checkbox" id="pineapple" />
                         <label for="pineapple">pineapple</label>
@@ -81,12 +97,12 @@
                         <input class="checkbox" checked="true" type="checkbox" id="anchovy" />
                         <label for="anchovy">anchovy</label>
                     </li>
-                </ul>
-                <ul>
                     <li>
                         <input class="checkbox" checked="true" type="checkbox" id="extra-cheese" />
                         <label for="extracheese">extra cheese</label>
                     </li>
+                </ul>
+                <ul>
                     <li>
                         <input class="checkbox" checked="true" type="checkbox" id="chicken" />
                         <label for="chicken">chicken</label>
@@ -103,32 +119,44 @@
                         <input class="checkbox" checked="true" type="checkbox" id="spinach" />
                         <label for="spinach">spinach</label>
                     </li>
+                </ul>
+                <ul>
                     <li>
                         <input class="checkbox" checked="true" type="checkbox" id="onion" />
                         <label for="onion">onion</label>
                     </li>
                     <li>
-                        <input class="checkbox" checked="true" type="checkbox" id="garlic" />
-                        <label for="garlic">garlic</label>
+                        <input class="checkbox" checked="true" type="checkbox" id="ham" />
+                        <label for="ham">ham</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" checked="true" type="checkbox" id="olives" />
+                        <label for="olives">olives</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" checked="true" type="checkbox" id="basil" />
+                        <label for="basil">basil</label>
                     </li>
                 </ul>
 
             </form>
-        </section>
-        
-        <section>
-            <button type="button" id="button-submit">surprise me</button>
+
+            <div class="container-buttons">
+                <button type="button" id="button-submit">surprise me</button>
+            </div>
+
         </section>
 
         <!-- pop up results container -->
-        <section>
+        <section id="container-popup">
             <h2>your order is on its way</h3>
-            <p>one size <span id="span-ordered-size"></span> pizza with:</p>
+                <p>one size <span id="span-ordered-size"></span> pizza with:</p>
                 <ul id="list-ordered-toppings">
                 </ul>
         </section>
 
     </main>
-    
+
 </body>
+
 </html>

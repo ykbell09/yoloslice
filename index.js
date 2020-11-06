@@ -68,6 +68,8 @@ window.onload = () => {
             newItem.innerText = item;
             list.appendChild(newItem);
         });
+
+        document.querySelector('#container-popup').style.display = 'block';
     };
     
     
