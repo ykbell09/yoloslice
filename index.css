@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+/* font-family: 'Roboto', sans-serif; */
+/* font-family: 'Italianno', cursive; */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 50px auto;
+    width: 900px;
+    font-family: 'Roboto', sans-serif;
+    background-color: grey;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        width: 100%;
+    }
+}
+
+/* main content and sections */
+
+main {
+    background-color: white;
+    padding: 75px;
+    box-shadow: 0px 0px 18px rgb(39, 39, 39);
+}
+
+header {
+    padding-bottom: 20px
+}
+
+header * {
+    text-align: center;
+    margin: 0px;
+}
+
+/* typography */
+
+h1 {
+    font-family: 'Italianno', cursive;
+    font-size: 130px;
+    color: red;
+    line-height: 60px;
+}
+
+h2 {
+    text-align: center;
+    color: green;
+}
+
+@media only screen and (min-width: 750px) {
+
+    h2::before,
+    h2::after {
+        display: inline-block;
+        background-color: green;
+        content: '';
+        width: 25%;
+        height: 3px;
+        margin: 5px;
+    }
+}
+
+h3 {
+    font-family: 'Italianno', cursive;
+    font-size: 5em;
+    color: red;
+    text-align: center;
+    margin: 60px 40px 0px 40px;
+    line-height: 30px;
+}
+
+h4 {
+    color: green;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 700px) {
+    h4 {
+        margin: 5px;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 699px) {
+
+    .dot {
+        background-color: green;
+        display: inline-block;
+        margin: 0px 15px;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+    }
+}
+
+.container-section-subhead {
+    text-align: center;
+}
+
+p,
+label,
+h4 {
+    font-weight: 800;
+    font-size: 1.2em;
+}
+
+ /* style pizza selection section */
+
+ select {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 2px;
+    margin: 5px 0px;
+}
+
+.container-prices {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+}
+
+.dotted-line {
+    content: '';
+    border-bottom: dotted 4px black; 
+    flex-grow: 2;
+}
+
+.container-prices p,
+.container-prices label {
+    margin: 5px 0px;
+    border-bottom: dotted thick transparent;
+}
+
+/* stype toppings checkbox section */
+
+#form-toppings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ul {
+    padding: 0px 10px;
+    list-style: none;
+}
+
+/* button style */
+
+.container-buttons {
+    text-align: center;
+}
+
+button {
+    background-color: rgb(39, 39, 39);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    margin: 5px;
+    
+    font: inherit;
+    color: white;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+/* results pop up */
+
+#container-popup {
+    display: none;
+}
