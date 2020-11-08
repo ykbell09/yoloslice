@@ -7,6 +7,7 @@ window.onload = () => {
     const choices = document.querySelectorAll('.checkbox');
     const checkedSelections = [];
     const randomChosenItems = [];
+    const resultsContainer = document.querySelector('#container-popup');
 
 
     // --- generator functions ---
@@ -69,7 +70,7 @@ window.onload = () => {
             list.appendChild(newItem);
         });
 
-        document.querySelector('#container-popup').style.display = 'block';
+        resultsContainer.style.display = 'block';
     };
     
     
@@ -86,6 +87,11 @@ window.onload = () => {
     document.querySelector('#button-submit').addEventListener('click', () => {
         generatePizza();
         displayPizza();
+    });
+
+    document.querySelector('#close-button').addEventListener('click', () => {
+        resultsContainer.style.display = 'none';
+
     });
 
 };
