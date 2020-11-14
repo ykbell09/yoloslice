@@ -85,6 +85,9 @@ h3 {
 
 h4 {
     color: var(--green);
+}
+
+.container-section-subhead h4 {
     display: inline-block;
 }
 

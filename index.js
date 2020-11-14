@@ -4,6 +4,8 @@ window.onload = () => {
 
     let sizeRequested;
     let qtyRequested;
+    let totalCost;
+    const costStatement = document.querySelector('#cost-statement');
     const choices = document.querySelectorAll('.checkbox');
     const checkedSelections = [];
     const randomChosenItems = [];
@@ -55,20 +57,55 @@ window.onload = () => {
             }
         }
     };
+
+    // --- calculate cost ---
+    const getTotalCost = () => {
+        
+        totalCost = 0;
+
+        switch (sizeRequested) {
+            case 'small':
+                totalCost = 8;
+                break;
+            case 'medium':
+                totalCost = 10;
+                break;
+            case 'large':
+                totalCost = 12;
+                break;
+            case 'x-large':
+                totalCost = 14;
+                break;
+            default:
+                totalCost = 0;
+        }
+
+        totalCost = (totalCost + (qtyRequested * 1.5)).toFixed(2);
+        
+    };
     
-    // display results
+    // --- display results ---
     const displayPizza = () => {
+
+        generatePizza();
 
         sizeRequested = document.querySelector('#select-size').value;
         document.querySelector('#span-ordered-size').innerHTML = sizeRequested;  
         const list = document.querySelector('#list-ordered-toppings');
         list.innerHTML = '';
 
+        // list items 
         randomChosenItems.forEach(item => {
             const newItem = document.createElement('li');
             newItem.innerText = item;
             list.appendChild(newItem);
         });
+
+        // display cost
+        getTotalCost();
+        costStatement.innerHTML = `your total is $${totalCost}`;
+        // resultsContainer.appendChild(costStatement);
+        console.log(costStatement);
 
         resultsContainer.style.display = 'block';
     };
@@ -85,7 +122,6 @@ window.onload = () => {
     });
 
     document.querySelector('#button-submit').addEventListener('click', () => {
-        generatePizza();
         displayPizza();
     });
 
